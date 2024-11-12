@@ -61,6 +61,7 @@ test325 test326 test327 test328 test329 test330 test331 \
 test340 \
 \
 test350 test351 test352 test353 test354 test355 test356 \
+test387 \
 test393 test394 test395 \
 \
 test400 test401 test402 test403 test404 test405 test406 test407 test408 \
