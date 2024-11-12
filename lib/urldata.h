@@ -559,6 +559,7 @@ struct SingleRequest {
 
   struct curltime start;         /* transfer started at this time */
   struct curltime now;           /* current time */
+  unsigned char writer_stack_depth; /* Unencoding stack depth. */
   enum {
     HEADER_NORMAL,              /* no bad header at all */
     HEADER_PARTHEADER,          /* part of the chunk is a bad header, the rest
