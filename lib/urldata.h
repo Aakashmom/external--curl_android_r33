@@ -1265,13 +1265,15 @@ struct UrlState {
   char *ulbuf; /* allocated upload buffer or NULL */
   curl_off_t current_speed;  /* the ProgressShow() function sets this,
                                 bytes / second */
-  char *first_host; /* host name of the first (not followed) request.
-                       if set, this should be the host name that we will
-                       sent authorization to, no else. Used to make Location:
-                       following not keep sending user+password... This is
-                       strdup() data.
-                    */
-  int first_remote_port; /* remote port of the first (not followed) request */
+
+  /* host name, port number and protocol of the first (not followed) request.
+     if set, this should be the host name that we will sent authorization to,
+     no else. Used to make Location: following not keep sending user+password.
+     This is strdup()ed data. */
+  char *first_host;
+  int first_remote_port;
+  unsigned int first_remote_protocol;
+
   struct curl_ssl_session *session; /* array of 'max_ssl_sessions' size */
   long sessionage;                  /* number of the most recent session */
   unsigned int tempcount; /* number of entries in use in tempwrite, 0 - 3 */
